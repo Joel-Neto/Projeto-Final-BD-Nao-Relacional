@@ -25,11 +25,13 @@ function parseJwt(token) {
   }
 }
 
-// const btnLogout = document.getElementById("logout");
+const btnLogout = document.getElementById("logout");
 
-// btnLogout.addEventListener("click", () => {
-//   // Removemos o token do LocalStorage
-//   localStorage.removeItem("token");
-//   // Redirecionamos para o login
-//   window.location.href = "index.html";
-// });
+btnLogout.addEventListener("click", () => {
+  if (confirm("Tem certeza que deseja sair?")) {
+    // Removemos o token do LocalStorage
+    localStorage.removeItem("token");
+    // Redirecionamos para o login
+    window.location.href = "login.html";
+  }
+});
