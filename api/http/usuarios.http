@@ -1,0 +1,37 @@
+# teste da API rest de usurios
+@baseURL = http://localhost:4000/api/usuarios
+
+# GET - Lista todos os usuários
+GET {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzQ0MTA3MywiZXhwIjoxNzE3NTI3NDczfQ.HmS8IxA-XtFJGCRk_-mRU0qDJ2PeqXVoE1YsZGebIu0
+
+###
+# GET - lista o prestador pelo ID
+GET  {{baseURL}}/id/65ef95a92f5018f4fd991e53
+Content-Type: application/json
+
+###
+# POST - Insere um novo usuário
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "Joseca Alves",
+    "email": "josecaalves@uol.com.br",
+    "senha": "123Mudar$"
+}
+
+###    
+# @prompt senha
+# POST - Efetua o login
+POST  {{baseURL}}/login
+Content-Type: application/json
+
+{
+  "email": "josecaalves@uol.com.br",
+  "senha": "{{senha}}"
+}
+
+
+

@@ -1,0 +1,74 @@
+# teste da API rest de jogadores 
+@baseURL = http://localhost:4000/api/jogadores
+
+# GET - Lista todos os jogadores
+GET {{baseURL}}/?limit=3&skip=0
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzUyODE0NCwiZXhwIjoxNzE3NjE0NTQ0fQ.uG6SmTDskXfmFYoPScOg1dB5R0-f83CuieK_PfF8hfg
+
+###
+# GET - lista o jogador pelo ID
+GET  {{baseURL}}/id/6626f5e5f75ed110519ac3f7
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzE5NTY1NSwiZXhwIjoxNzE3MjgyMDU1fQ._IBG_nQV7AQKTFoysd3z-KZZSRuf_xj2t7wGWoALKQ8
+
+###
+# GET - Lista o jogador pelo nome ou número da camisa 
+GET {{baseURL}}/nome/Joel/numero/0
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzI1MjExOCwiZXhwIjoxNzE3MzM4NTE4fQ.uUzV9Vv-1A-9mZlr4SUOhbjormFYjSojBZIiEUiv05c
+
+###
+# DELETE - remove o jogador pelo id
+DELETE  {{baseURL}}/6626f5e5f75ed110519ac3f7
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzE5NTY1NSwiZXhwIjoxNzE3MjgyMDU1fQ._IBG_nQV7AQKTFoysd3z-KZZSRuf_xj2t7wGWoALKQ8
+
+###
+# POST - Insere um novo jogaodr
+POST {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzE5NTY1NSwiZXhwIjoxNzE3MjgyMDU1fQ._IBG_nQV7AQKTFoysd3z-KZZSRuf_xj2t7wGWoALKQ8
+
+{
+  "nome": "Joãozinho",
+  "numero_camisa": 12,
+  "posicao": "Zegueiro",
+  "time": "Palmeiras",
+  "valor_de_mercado": 2000,
+  "cep": "18111000",
+  "endereco": {
+    "logradouro": "Av. Presidente Kennedy, 321",
+    "bairro": "Centro",
+    "localidade": "Votorantim",
+    "uf": "SP"
+  },
+  "data_inicio_atividade": "2024-04-22"
+}
+
+
+###
+# PUT - altera um jogador já existente.
+PUT {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjY1YTUzNjI3OTlmNjdhNmQ1ZDJiNGQzIn0sImlhdCI6MTcxNzE5NTY1NSwiZXhwIjoxNzE3MjgyMDU1fQ._IBG_nQV7AQKTFoysd3z-KZZSRuf_xj2t7wGWoALKQ8
+
+{
+  "_id": "6626f5eaf75ed110519ac3f8",
+  "nome": "Zé João 2.0",
+  "numero_camisa": 7,
+  "posicao": "Meio campo",
+  "time": "Palmeiras",
+  "valor_de_mercado": 1700,
+  "cep": "18111000",
+  "endereco": {
+    "logradouro": "Av. Presidente Kennedy, 321",
+    "bairro": "Centro",
+    "localidade": "Votorantim",
+    "uf": "SP"
+  },
+  "data_inicio_atividade": "2024-04-22"
+}
+
+
+

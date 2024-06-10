@@ -1,0 +1,23 @@
+use("FatecVotorantimJogadores");
+const jogador = {
+  nome: "João",
+  numero_camisa: 11,
+  posicao: "Zegueiro",
+  time: "Palmeiras",
+  valor_de_mercado: 2000,
+  cep: "18111000",
+  endereco: {
+    logradouro: "Av. Presidente Kennedy, 321",
+    bairro: "Centro",
+    localidade: "Votorantim",
+    uf: "SP",
+  },
+  data_inicio_atividade: "2024-04-22",
+  data_criacao: new Date(),
+  ultima_atualizacao: "",
+};
+
+db.jogadores.insertOne(jogador);
+
+use("FatecVotorantimJogadores");
+db.jogadores.find();

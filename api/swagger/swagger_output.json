@@ -1,0 +1,547 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "📊📈API Fatec Votorantim",
+    "description": "➡️Documentação gerada automaticamente pelo módulo <a href='https://github.com/davibaltar/swagger-autogen' target='_blank'>swagger-autogen</a>."
+  },
+  "host": "localhost:4000",
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "access-token",
+      "description": "Token de Acesso gerado após o login"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/jogadores": {
+      "get": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Lista todos os jogadores",
+        "description": "Endpoint para obter todos os jogadores.",
+        "parameters": [
+          {
+            "name": "limit",
+            "type": "int",
+            "description": "Limite de registros por página (opcional, padrão: 10)",
+            "in": "query"
+          },
+          {
+            "name": "skip",
+            "type": "int",
+            "description": "Número de registros a pular (opcional, padrão: 0)",
+            "in": "query"
+          },
+          {
+            "name": "order",
+            "type": "string",
+            "description": "Campo de ordenação (opcional, ex: nome:asc)",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array com os jogadores"
+          },
+          "401": {
+            "description": "Acesso negado. É obrigatório o envio do token JWT"
+          },
+          "500": {
+            "description": "Erro ao obter a listagem dos jogadores"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Adiciona um novo jogador",
+        "description": "Endpoint para adicionar um novo jogador.",
+        "parameters": [
+          {
+            "name": "jogador",
+            "in": "body",
+            "description": "Informações do jogador",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "object"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "Jhon Doe"
+                        }
+                      }
+                    },
+                    "numero_camisa": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "number"
+                        },
+                        "example": {
+                          "type": "number",
+                          "example": 10
+                        }
+                      }
+                    },
+                    "posicao": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "Zagueiro"
+                        }
+                      }
+                    },
+                    "time": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "Palmeiras"
+                        }
+                      }
+                    },
+                    "valor_de_mercado": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "number"
+                        },
+                        "example": {
+                          "type": "number",
+                          "example": 10000
+                        }
+                      }
+                    },
+                    "cep": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "01001000"
+                        }
+                      }
+                    },
+                    "endereco": {
+                      "type": "object",
+                      "properties": {
+                        "logradouro": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "example": "string"
+                            },
+                            "example": {
+                              "type": "string",
+                              "example": "Av. Presidente Kennedy, 321"
+                            }
+                          }
+                        },
+                        "bairro": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "example": "string"
+                            },
+                            "example": {
+                              "type": "string",
+                              "example": "Centro"
+                            }
+                          }
+                        },
+                        "localidade": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "example": "string"
+                            },
+                            "example": {
+                              "type": "string",
+                              "example": "Votorantim"
+                            }
+                          }
+                        },
+                        "uf": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "example": "string"
+                            },
+                            "example": {
+                              "type": "string",
+                              "example": "SP"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "data_inicio_atividade": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "2024-04-22"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "400": {
+            "description": "Solicitação Inválida"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Altera um jogador pelo ID",
+        "description": "Endpoint para alterar um jogador pelo ID.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "example": "any"
+                },
+                "ultima_atualizacao": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Aceito"
+          },
+          "400": {
+            "description": "Solicitação Inválida"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/jogadores/{id}": {
+      "get": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Lista o Jogador pelo ID",
+        "description": "Endpoint para obter um único jogador pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "id do Jogador"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array com o Jogador"
+          },
+          "401": {
+            "description": "Acesso negado. É obrigatório o envio do token JWT"
+          },
+          "500": {
+            "description": "Erro ao obter o prestador pelo ID"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Remove o jogador pelo ID",
+        "description": "Endpoint para apagar um único jogador pelo ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "id do jogador a ser excluído"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Registro removido com sucesso"
+          },
+          "401": {
+            "description": "Acesso negado. É obrigatório o envio do token JWT"
+          },
+          "404": {
+            "description": "Não há nenhum jogador com o id informado"
+          },
+          "500": {
+            "description": "Erro ao excluir o jogador pelo ID"
+          }
+        }
+      }
+    },
+    "/jogadores/jogador": {
+      "get": {
+        "tags": [
+          "Jogadores"
+        ],
+        "summary": "Obter informações do jogador pelo nome e/ou número da camisa",
+        "description": "Endpoint para obter informações do jogador com base no nome e/ou número da camisa.",
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "query",
+            "description": "Nome do jogador",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "numeroCamisa",
+            "in": "query",
+            "description": "Número da camisa do jogador",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação bem-sucedida. Retorna um array com as informações do jogador."
+          },
+          "401": {
+            "description": "Acesso negado. É obrigatório o envio do token JWT"
+          },
+          "500": {
+            "description": "Erro ao obter o jogador pelo nome e número."
+          }
+        }
+      }
+    },
+    "/usuarios": {
+      "get": {
+        "tags": [
+          "Usuários"
+        ],
+        "summary": "Lista todos os usuários do sistema",
+        "description": "Endpoint para obter todos os usuários do sistema.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Usuários"
+        ],
+        "summary": "Adiciona um novo usuário ao sistema",
+        "description": "Endpoint para adicionar um novo usuário.",
+        "parameters": [
+          {
+            "name": "usuario",
+            "in": "body",
+            "description": "Informações do usuário",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "example": "object"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "JOSÉ MARIA LIMA"
+                        }
+                      }
+                    },
+                    "email": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "joselima@uol.com.br"
+                        }
+                      }
+                    },
+                    "senha": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "string"
+                        },
+                        "example": {
+                          "type": "string",
+                          "example": "123Mudar@"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "400": {
+            "description": "Solicitação Inválida"
+          }
+        }
+      }
+    },
+    "/usuarios/login": {
+      "post": {
+        "tags": [
+          "Usuários"
+        ],
+        "summary": "Efetua o login do usuário do sistema",
+        "description": "Endpoint para efetuar o login e receber o token JWT.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Acesso Negado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Erro": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "example": "Erro gerado pela aplicação"
+        },
+        "msg": {
+          "type": "string",
+          "example": "Mensagem detalhando o erro"
+        },
+        "param": {
+          "type": "string",
+          "example": "URL que gerou o erro"
+        }
+      }
+    }
+  }
+}

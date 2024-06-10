@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fut Tec Votorantim</title>
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg nnavbar-dark bg-success">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">⚽ Fut Tec Votorantim</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Início</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Jogadores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Adicionar Jogador</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-8">
+          <!-- formulário -->
+          <h4 class="text-success text-center mt-5">⚽Cadastro de Jogadores⚽</h4>
+          <div class="container">
+            <form
+              id="formJogadores"
+              method="post"
+              class="m-auto"
+              style="max-width: 600px"
+            >
+              <hr class="my-4" />
+              <div class="form-group mb-3">
+                <label for="nome">Nome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  name="nome"
+                  required
+                  maxlength="50"
+                  autofocus
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="numCamisa">número da camisa</label
+                ><input
+                  type="number"
+                  class="form-control mb-2"
+                  id="numCamisa"
+                  name="numCamisa"
+                  min="1"
+                  required
+                />
+                <p class="text-center text-danger d-none" id="numeroNegativoErro">
+                  <strong>O número não pode ser negativo.</strong>
+                </p>
+              </div>
+              <div class="form-group mb-3">
+                <label for="posicao">Posição</label>
+                <select name="posicao" id="posicao" class="form-select" aria-label="Default select example">
+                  <option selected disabled>Escolha uma posição</option>
+                  <option value="Goleiro">Goleiro</option>
+                  <option value="zagueiro">Zagueiro</option>
+                  <option value="lateral">Lateral</option>
+                  <option value="volante">Volante</option>
+                  <option value="meia">Meia</option>
+                  <option value="ponta">Ponta</option>
+                  <option value="atacante">Atacante</option>
+                </select>
+              </div>
+              <hr class="bg-transparent border-0 py-1" />
+
+              <div class="form-group mb-3">
+                <label for="numCamisa">Time</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="time"
+                  name="time"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="cep">CEP</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cep"
+                  name="cep"
+                  required
+                  maxlength="8"
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="logradouro">Logradouro</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="logradouro"
+                  name="logradouro"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="bairro">Bairro</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="bairro"
+                  name="bairro"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="bairro">Localidade</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="localidade"
+                  name="localidade"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="bairro">UF</label
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="uf"
+                  name="uf"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="data-de-inicio-da-atividade"
+                  >Data de Início da Atividade</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="data-de-inicio-da-atividade"
+                  name="data-de-inicio-da-atividade"
+                  required
+                />
+              </div>
+              <hr class="bg-transparent border-0 py-1" />
+              <hr class="my-4" />
+              <div class="form-group text-center mb-3">
+                <button class="btn btn-success" type="submit">
+                  💾 Salvar
+                </button>
+              </div>
+              <br /><br /><br />
+            </form>
+          </div>
+        </div>
+        
+
+    <footer
+      class="bg-success text-white text-center py-3 position-fixed fixed-bottom"
+    >
+      &copy; Fatec Votorantim - Todos os direitos reservados
+    </footer>
+
+    <!-- JS Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS do projeto -->
+    <script src="js/jogadoresForm.js"></script>
+    <script src="js/validaToken.js"></script>
+  </body>
+</html>
